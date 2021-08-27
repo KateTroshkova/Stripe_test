@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+
+	let stripe;
+
+    window.onload=function(){
+		var stripeButton = document.getElementById("stripeButton");
+		stripeButton.addEventListener("click", event=>{
+		stripe = Stripe("pk_test_51J53YnLDZD54rKYEWtVkKipGNlAa1e7Ks4Vz44mwxsM9Uyjn1rJEdxUhQS4BbbL89yYhVPO4Ah94VeES2Vnxl5ly006GlnMfNu");
+		stripe.redirectToCheckout({ sessionId: "cs_test_c1Zwa7ow9hfvJWWSzVecepQl6NZPQA6IoBWfT5XwTbM9XUA7jX7vKQ6pJp" });
+			}
+		);
+    }
+    </script>
+</head>
+<body>
+<button id="stripeButton">Stripe</button>
+</body>
+</html>
